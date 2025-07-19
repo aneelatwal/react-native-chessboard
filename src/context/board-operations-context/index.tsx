@@ -162,14 +162,8 @@ const BoardOperationsContextProviderComponent = React.forwardRef<
         return;
       }
 
-      pieceRefs?.current?.[to]?.current?.enable(false);
-      showPromotionDialog({
-        type: chess.turn(),
-        onSelect: (piece) => {
-          moveProgrammatically(from, to, piece);
-          pieceRefs?.current?.[to]?.current?.enable(true);
-        },
-      });
+      // ✅ Always auto-promote to queen without showing a dialog
+      moveProgrammatically(from, to, 'q');
     },
     [
       chess,
