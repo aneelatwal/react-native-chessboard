@@ -7,7 +7,7 @@ import { StyleSheet } from 'react-native';
 import type { BoardPromotionContextState } from '..';
 import { DialogPiece } from './dialog-piece';
 
-const PROMOTION_PIECES: PieceType[] = ['q', 'n'];
+const PROMOTION_PIECES: PieceType[] = ['q'];
 
 const PromotionDialog: React.FC<Required<BoardPromotionContextState>> =
   React.memo(({ type, onSelect }) => {
